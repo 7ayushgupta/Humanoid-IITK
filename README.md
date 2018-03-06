@@ -55,3 +55,6 @@ Services allow nodes to send a request and receive a response.
 4. Completed ROS Nodes
 5. Completed ROS Topics
 
+___ERROR while using mixcell__
+Use sudo to run the application.
+

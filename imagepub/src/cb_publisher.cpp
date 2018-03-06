@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh; //main access point for communication
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("cb_img",1); //tells the master that we are going to publish on the topic cb_img
-    
+
     //initialising the image which needs to be generated
 	sensor_msgs::Image gen_image; //naming it generated_image
 	gen_image.header.stamp     = ros::Time::now();
