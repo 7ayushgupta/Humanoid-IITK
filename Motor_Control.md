@@ -1,8 +1,16 @@
 # Controlling Servos with ROS, and Mixcell
 
+## Mixcell
+
+__Mixcell__ is used for communication with the servos, and setting up the inherit settings such as _Baudrate, MotorId, TurnMode_. This can also be done by ROS commands but it is easier to use a GUI. 
+* Connect using the tty/USB0 serial port, (as it has already been specified in the controller files, or you will have to change them there), and find the motor. 
+* There are three Turnmodes, we will mainly use the Joint mode (which allows us to move from one specific angle to other)
+* Baudrate for __MX-28__ is __57600__. 
 
 __NOTE:__ _If having error while using Mixcell, to connect to motor._
 For using correctly in Joint mode, we need to set the CCW Angle limit to 4095, it can be set to anywhere actually. Basically, the motor stops after reaching that limit so, need to make sure it is huge. We can make the motor go in the backward direction also.
+
+## ROS and Dynamixel
 
 __tilt.yaml__ is a file which contains the ROS parameters. This is done so that we can change the basic variables everywhere (like global values) without having to change them in each program. We make a seperate file for the parameters in yaml format.
 
@@ -52,3 +60,8 @@ We create a launch file like in the previous example.
           output="screen"/>
 </launch>
 ~~~
+
+### BIPED FILES
+
+Clone this repository, and find the zip my_dynamixel_package.zip
+_NOTE_: The folder is different from the zip file.
