@@ -49,9 +49,9 @@ For ROS Hydro and later,
 Services are another way that nodes can communicate with each other.
 Services allow nodes to send a request and receive a response.
 
-### Actionlib Client
+### ROS Actionlib Client
 TODO
 
-___ERROR while using mixcell__
+__ERROR while using mixcell__
 Use sudo to run the application.
 
