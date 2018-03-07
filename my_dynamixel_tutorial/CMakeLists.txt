@@ -106,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES my_dynamixel_tutorial
-#  CATKIN_DEPENDS dynamixel_controllers roscpp rospy std_msgs
+  CATKIN_DEPENDS dynamixel_controllers roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -134,7 +134,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/my_dynamixel_tutorial_node.cpp)
+add_executable(trajectory_node trajectory_client.py)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

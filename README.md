@@ -49,11 +49,8 @@ For ROS Hydro and later,
 Services are another way that nodes can communicate with each other.
 Services allow nodes to send a request and receive a response.
 
-1. Completed Catkin Tutorial
-2. Completed ROS File Systems
-3. Completed ROS Package
-4. Completed ROS Nodes
-5. Completed ROS Topics
+### Actionlib Client
+TODO
 
 ___ERROR while using mixcell__
 Use sudo to run the application.
