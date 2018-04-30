@@ -13,15 +13,13 @@ from control_msgs.msg import JointTrajectoryAction, JointTrajectoryGoal, FollowJ
 
 #importing numpy from Scipy stack
 import scipy.io as sio
-angles_mat = sio.loadmat('file.mat')
-print(angles_mat.shape)
-print(angles_mat.head)
+import numpy as np
+left_leg_mat = np.genfromtxt('Data_angles/cleaned_angles_left.csv',delimiter=',')
+right_leg_mat = np.genfromtxt('Data_angles/cleaned_angles_right.csv',delimiter=',')
+angles_mat = np.genfromtxt('Data_angles/angles_data.csv', delimiter=',')
 
 #for using the ith row of a 2D array
-i = 0
-print(angles_mat[i,])
-
-duration = 0.1
+duration = 5
 
 #arm_name should be b_arm or f_arm
 class Joint:
@@ -49,9 +47,22 @@ class Joint:
 def main():
     print("Start of the trajectory file")
     arm = Joint('f_arm')
-    for i in range(0,200):
-        arm.move_joint(angles_mat[i,])
-        print(str(i) +'th step completed')
+    arr_ref = [     3.048019825528769,  1.915942004069166,  3.5619033894704586,     0.2945243112740431,     -2.383806144374286,     2.710544052193928,  0.5460971604872883,     3.667748063834568,  2.8440003807399785,     2.82252464970958]
+    arm.move_joint(arr_ref)
+
+
+    #for i in range(0,4):
+    #print(str(i) + 'th step started')
+    print(angles_mat[199])
+
+    angles_mat[199]*=-1
+    
+    arr_temp = np.add(arr_ref, angles_mat[199])
+    print(arr_temp)
+    # print(arr_temp)
+    # print(angles_mat[0]) 
+    arm.move_joint(arr_temp)
+    # #print(str(i) +'th step completed')
 
 if __name__ == '__main__':
     rospy.init_node('trajectory_client')
